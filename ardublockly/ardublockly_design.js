@@ -285,6 +285,8 @@ Ardublockly.materialAlert = function(title, body, confirm, callback) {
   $('#gen_alert_title').text(title);
   $('#gen_alert_body').text('');
   $('#gen_alert_body').append(body);
+  $('#gen_alert_ok_link').unbind('click');
+
   if (confirm == true) {
     $('#gen_alert_cancel_link').css({'display': 'block'});
     if (callback) {
@@ -292,7 +294,6 @@ Ardublockly.materialAlert = function(title, body, confirm, callback) {
     }
   } else {
     $('#gen_alert_cancel_link').css({'display': 'none'});
-    $('#gen_alert_ok_link').unbind('click');
   }
   $('#gen_alert').openModal();
   window.location.hash = '';
